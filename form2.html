@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>form</title>
+	<style type="text/css">
+		body{  
+		  font-family: "Trebuchet ms";  
+		  background-color: lightgray;  
+		}  
+		.container {  
+			margin: 0 auto;
+		  padding: 10px 60px;  
+		  background-color: white;
+		  max-width: 100%; 
+		  box-shadow: box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%)!important;; 
+		}    
+		input, textarea {  
+		  width: 100%;  
+		  padding: 15px;  
+		  margin: 5px 0 22px 0;  
+		  display: inline-block;  
+		  background: lightgray;
+		  opacity: 0.7;  
+		  border: none;
+		  border-radius: 3px;
+		}  
+		input:hover{    
+		  outline: 1;
+		}  
+		div {  
+            padding: 10px 0;  
+		}  
+		hr {  
+		  border: 1px solid #f1f1f1;  
+		  margin-bottom: 25px;  
+		}  
+		.registerbtn {  
+		  background-color: #04AA6D;  
+		  color: white;  
+		  padding: 16px 20px;  
+		  margin: 8px 0;  
+		  border: 4px;  
+		  cursor: pointer;  
+		  width: 50%;  
+		  opacity: 0.9;
+		  align-content: center;  
+		  border-radius: 3px;
+		}  
+		.registerbtn:hover { 
+			box-shadow: lightblue;
+		  opacity: 1;  
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		
+	</nav>
+
+	<form>  
+	  <div class="container">  
+	  	<center>
+	  		<h1>Registeration Form</h1> 
+	  	</center>  
+	  	<hr>  
+	  	<br>
+	  	<label for="firstname"><b>Firstname </label>
+	  	<br>	   
+		<input type="text" id="fname" name="firstname" placeholder= "Enter Firstname"  required />   
+		<label for="middlename"><b>Middlename: </label>   
+		<input type="text" id="mname" name="middlename" placeholder="Enter Middlename" size="15" required />   
+		<label for="lastname"><b>Lastname: </label>    
+		<input type="text" id="lname" name="lastname" placeholder="Enter Lastname" size="15"required />   
+		
+		<label for="phone"><b>Phone no. :</label>   
+		<input type="text" id="pnum" name="phone" placeholder="Enter phone no." size="10" value="+91" required> 
+		<button type="submit" onclick="gen_otp()">Verify Number</button>
+		<br>
+		<br>
+		<label for="otp"><b>OTP :</b></label>
+		<input type="text" id="otp" name="otp" placeholder="Enter OTP" >
+		<br>
+		<label for="address"><b>Current Address :<b></label>  
+		<textarea cols="80" rows="5" id="address" placeholder="Enter Current Address" value="address" ></textarea> 
+
+		<label for="email"><b>Email</b></label>  
+		<input type="email" id="email" placeholder="Enter Email" name="email" required> 
+
+		<label for="psw"><b>Password</b></label>  
+	    <input type="password" id="pass" placeholder="Enter Password" name="psw" required>
+
+	  	<label for="psw-repeat"><b>Re-type Password</b></label>  
+	    <input type="password" id="repass" placeholder="Retype Password" name="psw-repeat" required>  
+
+	    <button type="submit" class="registerbtn" onclick="return matchpass()">Register</button>
+	    <p><i>Have already registered <a href="form1.html">Sign in</a></i>   
+	</form>
+
+	<script type="text/javascript">
+				function details(){
+					var fname=document.getElementById("fname").value;
+					var mname=document.getElementById("mname").value;
+					var lname=document.getElementById("lname").value;
+					alert("Name : "+fname+" "+mname+" "+lname); 
+				}				
+				function gen_otp(){
+				    var digits = '0123456789';
+				    var OTP = '';
+				    for (let i = 0; i < 6; i++ ) {
+				        OTP += digits[Math.floor(Math.random() * 10)];
+				    }
+				    alert("OTP is "+OTP);
+				    return OTP;
+				}
+				function matchpass(){
+					var pass = from.pass.value;
+					var repass = from.repass.value;
+					if (pass==''){
+						alert("Please enter Password.");
+					}
+					else if(repass){
+						alert("Please enter Mached. Renter Password.");
+						return false;
+					}
+					else{
+						alert("Password Mached");
+						return True;
+					}
+				}
+
+	</script>
+</body>
+</html>
