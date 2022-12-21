@@ -1,5 +1,3 @@
-
-
 function validate(){
 const name = document.getElementById('name').value;
 const username = document.getElementById('username').value;
@@ -47,5 +45,4 @@ const password2 = document.getElementById('password2').value;
 			return true;
 		}
 	}
-
 }
