@@ -101,6 +101,10 @@ const password2 = document.getElementById('password2').value;
 		}
 		else{
 			document.getElementById('pass2-error').innerHTML ="Password Mached.";
+			if(form.checkbox.checked==false){
+				alert("please check the box.");
+				return false;
+			}
 			return true;
 		}
 	}
