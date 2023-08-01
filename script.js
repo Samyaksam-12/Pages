@@ -1,5 +1,5 @@
 
-
+//Samyak Mendhe
 function validate(){
 const name = document.getElementById('name').value;
 const username = document.getElementById('username').value;
